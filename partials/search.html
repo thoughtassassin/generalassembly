@@ -1,0 +1,28 @@
+<div class="jumbotron">
+	<div class="container">
+		<header>
+		   <h1 class="text-center">Movie Search</h1>
+		   <h2 class="text-center">Find the scoop on your favorite movies</h2>
+	    </header>
+		
+		<p class="lead text-center">Type in a search term to find a record of a movie.</p>
+		
+		<form method="get" ng-submit="findMovies()" >
+			<div class="input-group">
+				<input type="text" ng-model="searchTerm" name="search" id="search" class="form-control">
+				<div class="input-group-btn">
+					<input type="submit" id="submit_button" value="Find My Movie!" class="btn btn-primary btn-large">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="container">
+	<ul class="movies list-unstyled text-center lead list-group">
+		<li ng-repeat="movie in movies" class="list-group-item">
+			<a href="#{{movie.imdbID}}">
+				{{movie.Title}}, {{movie.Year}}
+			</a>
+		</li>
+	</ul>
+</div>
